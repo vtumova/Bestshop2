@@ -1,10 +1,20 @@
+@import "settings/mixins.scss";
+@import "settings/colors.scss";
+@import "settings/fonts.scss";
+
 @import "settings/base.scss";
+
+
 
 @import "settings/media.scss";
 
 @import "scss/header.scss";
-@import "scss/section.scss";
+@import "scss/info_section.scss";
+@import "scss/statistic.scss";
+@import "scss/benefits.scss";
+@import "scss/pricing.scss";
+@import "scss/contact.scss";
 @import "scss/footer.scss";
 
-@import "settings/colors.scss";
-@import "settings/fonts.scss"
+
+

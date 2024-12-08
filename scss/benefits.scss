@@ -1,0 +1,96 @@
+/* Benefits */
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.text-content h3 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.underline {
+    height: 4px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+/* Specifické styly pro jednotlivé sekce */
+.benefits-macbook2 .underline {
+    background-color: #FB3B64;
+}
+
+.benefits-macbook2 .background {
+    width: 255px;
+    height: 255px;
+    background: #FB3B64;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    border-radius: 41px;
+}
+
+.benefits-mobile .underline {
+    background-color: #08A6E4;
+}
+
+.benefits-mobile .background {
+    width: 320px;
+    height: 320px;
+    background: #07ACE6;
+}
+
+.benefits-radio .underline {
+    background-color: #E8E9ED;
+}
+
+.benefits-radio .background {
+    width: 440px;
+    height: 370px;
+    background: #55DFB4;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+}
+
+/* Obrázky */
+.image-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.image-content .background {
+    position: absolute;
+    z-index: 1;
+}

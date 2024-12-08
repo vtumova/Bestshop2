@@ -1,0 +1,15 @@
+@mixin center-container($max-width) {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin box-shadow($color: rgba(0, 0, 0, 0.2)) {
+    box-shadow: 0 4px 8px $color;
+}

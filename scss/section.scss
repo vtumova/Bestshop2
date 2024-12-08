@@ -1,0 +1,26 @@
+
+
+
+/* Media Queries pro tablet */
+@include tablet {
+    .info-section {
+        padding: 40px 15px;
+        max-width: 90%;
+    }
+
+    .statistics__container {
+        flex-direction: column;
+    }
+
+    .benefits {
+        max-width: 100%;
+    }
+
+    .pricing__boxes {
+        flex-direction: column;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+}

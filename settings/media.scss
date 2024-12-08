@@ -1,7 +1,7 @@
+@mixin tablet {
 @media (min-width: 768px) {
     .page-header .container {
-        flex-direction: row; // Zarovnání vedle sebe
-        justify-content: space-between;
+        flex-direction: column; // Zarovnání pod sebou
         height: 100px; // Nastavení pevné výšky
     }
 
@@ -13,12 +13,15 @@
     .page-nav-list li {
         margin: 0 20px; // Mezera mezi položkami
     }
+    @content;
+}
 }
 
 
 
 
-@media (min-width: 1024px) {
+@mixin pc {
+   @media (min-width: 1024px) {
     body {
         max-width: 1626px; // Maximální šířka pro velké obrazovky
         margin: 0 auto;
@@ -27,6 +30,8 @@
     .container {
         max-width: 1352px;
     }
+    @content;
 }
 
-   
+
+}
