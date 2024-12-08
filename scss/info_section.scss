@@ -1,0 +1,55 @@
+/* Info sekce */
+.info-section {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    background-position: bottom center;
+}
+
+.info-content {
+    position: relative;
+    z-index: 2;
+}
+
+.background {
+    display: flex;
+    max-width: 1626px;
+    max-height: 4234px;
+    background-image: url('./images/Background.png');
+    justify-content: center;
+}
+
+/* Nadpis */
+.info-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Popis */
+.info-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Tlačítko */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}

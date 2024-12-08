@@ -1,0 +1,82 @@
+/* Ceny - boxy */
+.pricing {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing__boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.pricing__box {
+    width: 370px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #FB3B64;
+}
+
+.pricing__details {
+    margin-top: 34px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.pricing__type {
+    font-size: 1.25rem;
+    font-family: $font-raleway;
+    font-weight: 700;
+}
+
+.pricing__price {
+    font-size: 2.875rem;
+    font-family: $font-open-sans;
+    font-weight: 300;
+    margin-top: 25px;
+    color: #07ACE6;
+}
+
+.pricing__limited {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    font-family: $font-raleway;
+    font-weight: 700;
+}
+
+.pricing__items {
+    text-align: center;
+}
+
+.pricing__item {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.pricing__item::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url('./images/Checkmark.svg');
+}
+
+.pricing__item--not::before {
+    background-image: url('./images/Checkmark.svg');
+}
+
+.pricing__box .btn {
+    position: relative;
+    bottom: -25px;
+    font-size: 0.8125rem;
+    background-color: #55DFB4;
+}

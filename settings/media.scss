@@ -1,0 +1,32 @@
+@media (min-width: 768px) {
+    .page-header .container {
+        flex-direction: row; // Zarovnání vedle sebe
+        justify-content: space-between;
+        height: 100px; // Nastavení pevné výšky
+    }
+
+    .page-nav-list {
+        flex-direction: row; // Horizontální zarovnání pro větší obrazovky
+        margin-top: 0;
+    }
+
+    .page-nav-list li {
+        margin: 0 20px; // Mezera mezi položkami
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 1626px; // Maximální šířka pro velké obrazovky
+        margin: 0 auto;
+    }
+
+    .container {
+        max-width: 1352px;
+    }
+}
+
+   
