@@ -1,37 +1,47 @@
 @mixin tablet {
-@media (min-width: 768px) {
-    .page-header .container {
-        flex-direction: column; // Zarovnání pod sebou
-        height: 100px; // Nastavení pevné výšky
+    @media (min-width: 768px) and (max-width: 1023px) { // Šířky pro tablety
+      .container {
+        display: flex;
+        flex-direction: column; // Položky pod sebou
+      }
+  
+      .page-nav-list {
+        flex-direction: column; // Položky menu pod sebou
+        align-items: flex-start; // Zarovnání k levému okraji
+        gap: 10px; // Mezera mezi položkami
+      }
+  
+      .page-nav-list li {
+        margin: 0; // Odstranění marginu pro mezery
+      }
+  
+      @content; // Umožňuje doplňující obsah
     }
-
-    .page-nav-list {
-        flex-direction: row; // Horizontální zarovnání pro větší obrazovky
-        margin-top: 0;
+  }
+  
+  @mixin pc {
+    @media (min-width: 1024px) { // Šířky pro PC
+      .container {
+        display: flex;
+        flex-direction: row; // Položky vedle sebe
+        justify-content: space-between; // Prostor mezi položkami
+        align-items: center; // Vertikální zarovnání na střed
+      }
+  
+      .page-nav-list {
+        flex-direction: row; // Položky menu vedle sebe
+        gap: 20px; // Mezera mezi položkami
+      }
+  
+      .page-nav-list li {
+        margin: 0; // Pro zajištění konzistentního mezery
+      }
+  
+      body {
+        max-width: 1626px; // Maximální šířka stránky
+        margin: 0 auto; // Centrované zarovnání
+      }
+  
+      @content; // Umožňuje doplňující obsah
     }
-
-    .page-nav-list li {
-        margin: 0 20px; // Mezera mezi položkami
-    }
-    @content;
-}
-}
-
-
-
-
-@mixin pc {
-   @media (min-width: 1024px) {
-    body {
-        max-width: 1626px; // Maximální šířka pro velké obrazovky
-        margin: 0 auto;
-    }
-
-    .container {
-        max-width: 1352px;
-    }
-    @content;
-}
-
-
-}
+  }
