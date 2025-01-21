@@ -1,11 +1,30 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: $font-open-sans, Arial, sans-serif;
-}
+/* Nastavuje univerzálně box-sizing pro všechny prvky na border-box */
+* {      
+    box-sizing: border-box; 
+        /* 
+        Vysvětlení:
+        - `box-sizing: border-box;` zajistí, že padding a border prvku budou
+          zahrnuty do jeho celkových rozměrů (šířky a výšky).
+        - Pomáhá snadněji spravovat layout a předcházet problémům s přetečením.
+        */
+    }
     
-
-
-$button-radius: 35px;
+    /* Nastavení základního stylu pro element <body> */
+    body {
+        font-family: $font-open-sans, Arial, sans-serif;
+        /* 
+        Vysvětlení:
+        - `font-family` určuje, jaké písmo se použije na stránce.
+               */
+    }
+    
+    /* Definice Sass proměnné pro zaoblení rohů tlačítek */
+    $button-radius: 35px;
+    /*
+    Vysvětlení:
+    - `$button-radius` je proměnná v Sass, která ukládá hodnotu `35px`.
+    - Tato hodnota bude použita pro `border-radius` (zaoblení rohů tlačítek)
+      na více místech v kódu.
+    - Použití proměnných zjednodušuje údržbu kódu, protože změnou této hodnoty
+      se aktualizují všechna tlačítka, která ji používají.
+    */

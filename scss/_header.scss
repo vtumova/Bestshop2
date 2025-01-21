@@ -1,65 +1,138 @@
+.page-header {
+    height: 70px; // Nastavení výšky hlavičky stránky
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); // Jemný stín pod hlavičkou
+    background-color: #fff; // Nastavení pozadí na bílou barvu
+    padding: 10px; // Vnitřní odsazení pro obsah hlavičky
 
-
-// záhlaví
-a {
-    text-decoration: none;
-}
-
-h2 {
-    font-family: $font-raleway;
-    font-size: 2.25rem;
-}
-
-// Kontejner
-.container {
-    @include center-container(1352px);
-}
-
-// Záhlaví
-.page-header .container {
-    height: auto;
-    @include flex-center(space-between);
-    @include box-shadow;
-    max-width: 100%;
-    border-radius: 10px;
-    padding: 1rem;
-}
-
-.logo {
-    color: $color-primary;
-    width: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-// Navigace
-.page-nav-list {
-    @include flex-center(flex-start);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        margin-left: 20px;
+    .container {
+        display: flex; // Aktivace flexboxu pro rozložení obsahu
+        justify-content: space-between; // Rovnoměrné rozmístění položek
+        align-items: center; // Vertikální zarovnání položek na střed
+        height: 100%; // Výška kontejneru se rovná výšce hlavičky
     }
 
-    a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $color-grey;
-        font-weight: bold;
-        font-family: $font-open-sans;
+    .logo {
+        font-size: 1.25rem; // Velikost písma loga
+        font-weight: bold; // Tučné písmo loga
+        color: #333; // Barva textu loga
+        text-decoration: none; // Odstranění podtržení z odkazu loga
+    }
 
-        &:hover {
-            color: $color-black;
-            text-decoration: underline $color-primary 5px;
+
+    .page-nav {
+        display: flex; // Aktivace flexboxu pro seznam navigace
+
+        .page-nav-list {
+            display: flex; // Položky navigace jsou vedle sebe
+            list-style: none; // Odstranění odrážek ze seznamu
+            margin: 0; // Odstranění vnějších okrajů seznamu
+            padding: 0; // Odstranění vnitřních okrajů seznamu
+
+            li {
+                margin: 0; // Odstranění výchozího okraje položek seznamu
+
+                &:not(:last-child) {
+                    margin-right: 26px; // Mezera mezi položkami kromě poslední
+                }
+            }
+
+
+        }
+    }
+
+
+
+}
+
+a {
+    color: #666; // Barva odkazu
+    font-weight: 700; // Tučné písmo pro odkazy
+    font-size: 0.875rem; // Velikost textu odkazu
+    text-transform: uppercase; // Všechny znaky velkými písmeny
+    padding: 28px 18px 22px; // Vnitřní odsazení odkazu
+    border-bottom: 4px solid transparent; // Spodní ohraničení (neviditelné)
+    text-decoration: none; // Odstranění podtržení
+    letter-spacing: 0.1875rem; // Zvýšení mezery mezi písmeny
+    transition: color 0.3s, border-color 0.3s; // Plynulá změna barvy a ohraničení
+
+    &:hover {
+        color: #000; // Barva odkazu při najetí
+        border-color: #007bff; // Spodní ohraničení při najetí
+    }
+}
+
+
+@media (max-width: 792px) {
+    .page-nav {
+        position: absolute; // Absolutní umístění navigace
+        top: 70px; // Navigace začíná pod hlavičkou
+        left: 0; // Zarovnání k levému okraji
+        width: 100%; // Navigace zabere celou šířku obrazovky
+        background-color: white; // Bílé pozadí
+        flex-direction: column; // Položky navigace pod sebou
+        display: none; // Skrytí navigace ve výchozím stavu
+
+        .page-nav-list {
+            flex-direction: column; // Položky navigace pod sebou
+
+            li {
+                margin: 0; // Odstranění okrajů mezi položkami
+
+                a {
+                    display: block; // Odkazy zabírají celou šířku
+                    padding: 14px 20px; // Vnitřní odsazení
+                    text-align: center; // Zarovnání textu na střed
+                }
+            }
         }
     }
 }
 
-.page-header {
-    @include tablet;
-    @include pc;
+
+.menu-btn {
+    display: block; // Zobrazení tlačítka menu
+    position: relative; // Relativní pozice pro snadnější manipulaci
+    width: 24px; // Šířka tlačítka
+    height: 24px; // Výška tlačítka
+
+    cursor: pointer; // Ukazatel myši jako ruka při najetí
+
+
+    span {
+        display: block; // Každý řádek (proužek) je blok
+        width: 24px; // Šířka proužku
+        height: 2px; // Výška proužku
+        background-color: #333; // Barva proužků
+        margin-bottom: 5px; // Mezera mezi proužky
+        transition: transform 0.3s, opacity 0.3s; // Plynulé efekty při změnách
+
+        &:last-child {
+            margin-bottom: 0; // Poslední proužek nemá spodní mezeru
+        }
+    }
+}
+
+
+
+.menu-btn.active+.page-nav {
+    display: flex; // Zobrazení navigace při aktivaci tlačítka
+}
+
+.menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); // Rotace a přesun prvního proužku
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0; // Skrytí prostředního proužku
+}
+
+.menu-btn.active span:nth-child(3) {
+
+    transform: rotate(-45deg) translate(5px, -5px); // Rotace a přesun třetího proužku
+}
+
+@mixin mobile {
+    @media (max-width: 792px) {
+      @content; // Vloží obsah při volání mixinu
+    }
   }

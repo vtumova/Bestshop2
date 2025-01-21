@@ -1,47 +1,93 @@
+
+/* Definice mixinu pro mobil zařízení */
+@mixin mobile {
+  @media (max-width: 792px) {
+    @content;
+  }
+}
+
+/* Definice mixinu pro tabletová zařízení */
 @mixin tablet {
-    @media (min-width: 768px) and (max-width: 1023px) { // Šířky pro tablety
-      .container {
-        display: flex;
-        flex-direction: column; // Položky pod sebou
-      }
-  
-      .page-nav-list {
-        flex-direction: column; // Položky menu pod sebou
-        align-items: flex-start; // Zarovnání k levému okraji
-        gap: 10px; // Mezera mezi položkami
-      }
-  
-      .page-nav-list li {
-        margin: 0; // Odstranění marginu pro mezery
-      }
-  
-      @content; // Umožňuje doplňující obsah
+
+  /* Nastavení mediálního dotazu pro šířky obrazovky mezi 768px a 1023px */
+  @media (max-width: 1024px) {
+
+    /* Úprava kontejneru */
+    .container {
+      display: flex;
+      /* Aktivuje flexbox pro rozložení položek */
+      flex-direction: column;
+      /* Položky jsou umístěny pod sebe (sloupec) */
     }
   }
   
-  @mixin pc {
-    @media (min-width: 1024px) { // Šířky pro PC
-      .container {
-        display: flex;
-        flex-direction: row; // Položky vedle sebe
-        justify-content: space-between; // Prostor mezi položkami
-        align-items: center; // Vertikální zarovnání na střed
-      }
-  
-      .page-nav-list {
-        flex-direction: row; // Položky menu vedle sebe
-        gap: 20px; // Mezera mezi položkami
-      }
-  
-      .page-nav-list li {
-        margin: 0; // Pro zajištění konzistentního mezery
-      }
-  
-      body {
-        max-width: 1626px; // Maximální šířka stránky
-        margin: 0 auto; // Centrované zarovnání
-      }
-  
-      @content; // Umožňuje doplňující obsah
-    }
+  /* Úprava seznamu navigace */
+  .page-nav-list {
+    flex-direction: column;
+    /* Položky navigace jsou pod sebou */
+    align-items: flex-start;
+    /* Zarovnání položek k levému okraji */
+    gap: 10px;
+    /* Přidání mezery mezi jednotlivými položkami */
   }
+
+  /* Úprava jednotlivých položek seznamu */
+  .page-nav-list li {
+    margin: 0;
+    /* Odstranění marginu pro konzistentní mezery */
+  }
+
+  @content;
+  /* Umožňuje vložení doplňujícího obsahu při použití mixinu */
+}
+
+/* Definice mixinu pro PC zařízení */
+@mixin pc {
+
+  /* Nastavení mediálního dotazu pro šířky obrazovky 1024px a více */
+  @media (max-width: 1352px) {
+
+    /* Úprava kontejneru */
+    .container {
+      display: flex;
+      /* Aktivuje flexbox pro rozložení položek */
+      flex-direction: row;
+      /* Položky jsou umístěny vedle sebe (řádek) */
+      justify-content: space-between;
+      /* Rovnoměrný prostor mezi položkami */
+      align-items: center;
+      /* Vertikální zarovnání položek na střed */
+    }
+
+
+    /* Úprava seznamu navigace */
+    .page-nav-list {
+      flex-direction: row;
+      /* Položky navigace jsou vedle sebe */
+      gap: 20px;
+      /* Přidání větší mezery mezi položkami */
+    }
+
+
+  }
+
+
+  /* Úprava jednotlivých položek seznamu */
+  .page-nav-list li {
+    margin: 0;
+    /* Konzistentní mezery mezi položkami */
+  }
+
+
+
+  /* Úprava těla stránky */
+  body {
+    max-width: 1352px;
+    /* Maximální šířka stránky (pro zarovnání obsahu) */
+    margin: 0 auto;
+    /* Centrované zarovnání těla stránky na střed */
+  }
+
+  @content;
+  /* Umožňuje vložení doplňujícího obsahu při použití mixinu */
+}
